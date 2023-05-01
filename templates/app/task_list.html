@@ -25,8 +25,32 @@
 
               {% if task.done %}
                 <span class="text-success">Done</span>
+                <a
+                    href="{% url "app:task-toggle-done" pk=task.id %}"
+                    class=
+                        "
+                        btn
+                        btn-secondary
+                        float-right
+                        link-to-page
+                        "
+                >
+                  Undo
+                </a>
               {% else %}
                 <span class="text-danger">Not done</span>
+                <a
+                    href="{% url "app:task-toggle-done" pk=task.id %}"
+                    class=
+                        "
+                        btn
+                        btn-success
+                        float-right
+                        link-to-page
+                        "
+                >
+                  Complete
+                </a>
               {% endif %}
             </h6>
 

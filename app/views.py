@@ -1,5 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from app.forms import TaskCreationForm
@@ -14,3 +17,14 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     model = Task
     form_class = TaskCreationForm
+
+
+@login_required
+def task_toggle_done(done, pk):
+    task = Task.objects.get(id=pk)
+    task.done = not task.done
+    task.save()
+
+    return HttpResponseRedirect(
+        reverse_lazy("app:task-list")
+    )

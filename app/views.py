@@ -8,3 +8,8 @@ from app.models import Task
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 5
+
+
+class TaskCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Task
+    fields = "__all__"

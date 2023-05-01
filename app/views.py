@@ -19,6 +19,11 @@ class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     form_class = TaskCreationForm
 
 
+class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Task
+    fields = "__all__"
+
+
 @login_required
 def task_toggle_done(done, pk):
     task = Task.objects.get(id=pk)

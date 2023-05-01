@@ -24,6 +24,11 @@ class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
     fields = "__all__"
 
 
+class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy("app:task-list")
+
+
 @login_required
 def task_toggle_done(done, pk):
     task = Task.objects.get(id=pk)

@@ -78,7 +78,10 @@
               >
                 Update
               </a>
-              <a class="font-weight-bold" href="#">
+              <a
+                  class="font-weight-bold"
+                  href="{% url "app:task-delete" pk=task.id %}"
+              >
                 Delete
               </a>
             </p>

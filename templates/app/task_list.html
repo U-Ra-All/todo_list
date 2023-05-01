@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>
+    <h1 class="mb-3">
       TODO List
 {#      <a href="{% url "app:task-create" %}" class="btn btn-primary link-to-page">#}
 {#        Add task#}
@@ -8,7 +8,7 @@
     </h1>
 
     {% if task_list %}
-      <ul>
+      <ul class="list-unstyled">
         {% for task in task_list %}
           <li>
             <h6 class="font-weight-bold">
@@ -39,13 +39,15 @@
               {{ tag.name }}
               {% endfor %}
 
-              <a class="font-weight-bold" href="task_list.html">
+              <a class="font-weight-bold" href="#">
                 Update
               </a>
-              <a class="font-weight-bold" href="task_list.html">
+              <a class="font-weight-bold" href="#">
                 Delete
               </a>
             </p>
+
+            <hr>
           </li>
 
         {% endfor %}

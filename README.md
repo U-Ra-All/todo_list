@@ -17,11 +17,6 @@ python3 manage.py migrate
 python3 manage.py runserver # starts Django Server
 ```
 
-```shell
-Login: admin.user
-Password: 7QancRe2
-```
-
 ## Features
 
-* Managing todos and tags
+* Managing todos with tags, deadline and other features

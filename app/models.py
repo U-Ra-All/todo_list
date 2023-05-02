@@ -23,7 +23,8 @@ class Task(models.Model):
         ordering = ["done", "-datetime"]
 
     def __str__(self):
-        return f"{self.content}. Tags: ({', '.join([tag.name for tag in self.tags.all()])})"
+        return f"{self.content}. " \
+               f"Tags: ({', '.join([tag.name for tag in self.tags.all()])})"
 
     def get_absolute_url(self):
         return reverse("app:task-list")

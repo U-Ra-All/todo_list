@@ -19,7 +19,7 @@ urlpatterns = [
         name="task-list"
     ),
     path(
-        "/create",
+        "/create/",
         TaskCreateView.as_view(),
         name="task-create"
     ),

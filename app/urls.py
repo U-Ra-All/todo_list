@@ -19,27 +19,27 @@ urlpatterns = [
         name="task-list"
     ),
     path(
-        "/create/",
+        "create/",
         TaskCreateView.as_view(),
         name="task-create"
     ),
     path(
-        "/<int:pk>/update/",
+        "<int:pk>/update/",
         TaskUpdateView.as_view(),
         name="task-update",
     ),
     path(
-        "/<int:pk>/delete/",
+        "<int:pk>/delete/",
         TaskDeleteView.as_view(),
         name="task-delete",
     ),
     path(
-        "/<int:pk>/toggle-done/",
+        "<int:pk>/toggle-done/",
         task_toggle_done,
         name="task-toggle-done",
     ),
     path(
-        "/tags/",
+        "tags/",
         TagListView.as_view(),
         name="tag-list"
     ),

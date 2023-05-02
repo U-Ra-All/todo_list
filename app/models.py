@@ -8,6 +8,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("app:tag-list")
+
 
 class Task(models.Model):
     content = models.TextField()

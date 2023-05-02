@@ -6,6 +6,10 @@ from app.views import (
     TaskUpdateView,
     TaskDeleteView,
     task_toggle_done,
+    TagListView,
+    TagCreateView,
+    TagUpdateView,
+    TagDeleteView
 )
 
 urlpatterns = [
@@ -33,6 +37,26 @@ urlpatterns = [
         "/<int:pk>/toggle-done/",
         task_toggle_done,
         name="task-toggle-done",
+    ),
+    path(
+        "/tags/",
+        TagListView.as_view(),
+        name="tags-list"
+    ),
+    path(
+        "/create/",
+        TagCreateView.as_view(),
+        name="tags-create"
+    ),
+    path(
+        "/<int:pk>/update/",
+        TagUpdateView.as_view(),
+        name="tags-update",
+    ),
+    path(
+        "/<int:pk>/delete/",
+        TagDeleteView.as_view(),
+        name="tags-delete",
     ),
 ]
 

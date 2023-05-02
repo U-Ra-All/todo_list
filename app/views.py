@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from app.forms import TaskCreationForm
-from app.models import Task
+from app.models import Task, Tag
 
 
 class TaskListView(LoginRequiredMixin, generic.ListView):
@@ -38,3 +38,23 @@ def task_toggle_done(done, pk):
     return HttpResponseRedirect(
         reverse_lazy("app:task-list")
     )
+
+
+class TagListView(LoginRequiredMixin, generic.ListView):
+    model = Tag
+    paginate_by = 5
+
+
+class TagCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Tag
+    fields = "__all__"
+
+
+class TagUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Tag
+    fields = "__all__"
+
+
+class TagDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Tag
+    success_url = reverse_lazy("app:tag-list")

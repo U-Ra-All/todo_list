@@ -1,26 +1,13 @@
 from django.test import TestCase
 
 from app.models import Task, Tag
+from app.tests.utils import setup_test_task_with_tags
 
 
 class TaskModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        test_task = Task.objects.create(
-            content="TestTask",
-            deadline_datetime="2026-10-25 14:30")
-
-        Tag.objects.create(
-            name="TestTag1"
-        )
-
-        Tag.objects.create(
-            name="TestTag2"
-        )
-
-        tags_for_task = Tag.objects.all()
-        test_task.tags.set(tags_for_task)
-        test_task.save()
+        setup_test_task_with_tags()
 
     def test_content_label(self):
         task = Task.objects.get(id=1)

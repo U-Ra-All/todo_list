@@ -5,7 +5,7 @@ from app.views import (
     TaskCreateView,
     TaskUpdateView,
     TaskDeleteView,
-    task_toggle_done,
+    TaskToggleDone,
     TagListView,
     TagCreateView,
     TagUpdateView,
@@ -35,7 +35,7 @@ urlpatterns = [
     ),
     path(
         "<int:pk>/toggle-done/",
-        task_toggle_done,
+        TaskToggleDone.as_view(),
         name="task-toggle-done",
     ),
     path(

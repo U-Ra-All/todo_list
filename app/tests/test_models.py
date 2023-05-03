@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from app.models import Task, Tag
+from app.models import Task
 from app.tests.utils import setup_test_task_with_tags
 
 
@@ -37,7 +37,7 @@ class TaskModelTest(TestCase):
     def test_task_str(self):
         task = Task.objects.get(id=1)
         expected_object_name = f"{task.content}. " \
-                               f"Tags: ({', '.join([tag.name for tag in task.tags.all()])})"
+            f"Tags: ({', '.join([tag.name for tag in task.tags.all()])})"
         self.assertEqual(str(task), expected_object_name)
 
     def test_get_absolute_url(self):

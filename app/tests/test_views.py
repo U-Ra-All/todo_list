@@ -16,7 +16,7 @@ class TaskListViewTest(TestCase):
         for task_id in range(number_of_tasks):
             test_task = Task.objects.create(
                 content=f"TestTask {task_id}",
-                deadline_datetime=f"2026-10-25 14:30")
+                deadline_datetime="2026-10-25 14:30")
 
             Tag.objects.create(
                 name=f"TestTag1 {task_id}"

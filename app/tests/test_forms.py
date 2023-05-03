@@ -1,12 +1,10 @@
 from datetime import datetime, timezone
 
-from django.contrib.auth import get_user_model
-from django.shortcuts import get_object_or_404
 from django.test import TestCase
 from django.urls import reverse
 
 from app.forms import TaskCreationForm
-from app.models import Task, Tag
+from app.models import Tag
 from app.tests.utils import setup_test_task_with_tags
 
 
@@ -15,7 +13,9 @@ class TaskCreationFormTest(TestCase):
         form = TaskCreationForm()
         self.assertTrue(
             (form.fields["deadline_datetime"].label is None
-             or form.fields["deadline_datetime"].label == "Deadline date and time (optional)")
+             or form
+             .fields["deadline_datetime"]
+             .label == "Deadline date and time (optional)")
         )
 
     def test_task_create_form_deadline_datetime_placeholder(self):

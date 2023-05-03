@@ -8,7 +8,8 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
+    @staticmethod
+    def get_absolute_url():
         return reverse("app:tag-list")
 
 
@@ -26,5 +27,6 @@ class Task(models.Model):
         return f"{self.content}. " \
                f"Tags: ({', '.join([tag.name for tag in self.tags.all()])})"
 
-    def get_absolute_url(self):
+    @staticmethod
+    def get_absolute_url():
         return reverse("app:task-list")

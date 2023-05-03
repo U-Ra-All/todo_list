@@ -16,9 +16,3 @@ class TaskCreationForm(forms.ModelForm):
         labels = {
             "deadline_datetime": "Deadline date and time (optional)"
         }
-
-
-class TaskToggleDoneForm(forms.ModelForm):
-    class Meta:
-        model = Task
-        fields = []

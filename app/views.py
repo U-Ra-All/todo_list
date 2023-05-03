@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from app.forms import TaskCreationForm, TaskToggleDoneForm
+from app.forms import TaskCreationForm
 from app.models import Task, Tag
 
 
@@ -29,9 +29,9 @@ class TaskDeleteView(generic.DeleteView):
 
 class TaskToggleDone(generic.UpdateView):
     model = Task
-    form_class = TaskToggleDoneForm
+    fields = "__all__"
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         pk = kwargs.get("pk")
         task = get_object_or_404(Task, id=pk)
         task.done = not task.done

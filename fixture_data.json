@@ -431,28 +431,28 @@
 },
 {
   "model": "app.tag",
-  "pk": 2,
+  "pk": 1,
   "fields": {
     "name": "work"
   }
 },
 {
   "model": "app.tag",
-  "pk": 4,
+  "pk": 2,
   "fields": {
     "name": "home"
   }
 },
 {
   "model": "app.tag",
-  "pk": 5,
+  "pk": 3,
   "fields": {
     "name": "hobby"
   }
 },
 {
   "model": "app.tag",
-  "pk": 6,
+  "pk": 4,
   "fields": {
     "name": "sport"
   }
@@ -465,7 +465,9 @@
     "datetime": "2023-04-30T08:08:31.828Z",
     "deadline_datetime": null,
     "done": true,
-    "tags": []
+    "tags": [
+      2
+    ]
   }
 },
 {
@@ -477,7 +479,7 @@
     "deadline_datetime": "2023-05-05T15:00:00Z",
     "done": true,
     "tags": [
-      4
+      2
     ]
   }
 },
@@ -490,34 +492,34 @@
     "deadline_datetime": "2023-05-02T15:00:00Z",
     "done": false,
     "tags": [
-      2
+      1
     ]
   }
 },
 {
   "model": "app.task",
-  "pk": 10,
+  "pk": 4,
   "fields": {
     "content": "Finish Python Course",
     "datetime": "2023-05-02T06:03:53.881Z",
     "deadline_datetime": null,
     "done": false,
     "tags": [
-      2,
-      4
+      1,
+      2
     ]
   }
 },
 {
   "model": "app.task",
-  "pk": 11,
+  "pk": 5,
   "fields": {
     "content": "Get Python dev job",
     "datetime": "2023-05-02T06:05:11.728Z",
     "deadline_datetime": "2023-06-30T21:00:00Z",
     "done": false,
     "tags": [
-      2
+      1
     ]
   }
 },
